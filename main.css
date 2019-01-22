@@ -1,13 +1,18 @@
 body{
-    background-color: rgb(8, 8, 8);
+    background-color: rgb(0, 0, 0);
     color: rgb(255, 255, 255);
     margin: 0;
+    padding: 0;
     font-family: "Avant Garde", Avantgarde, "Century Gothic", CenturyGothic, "AppleGothic", sans-serif;
 }
+
+
 
 .main-content{
     text-align: center;
 }
+
+
 
 .title{
     text-transform: uppercase;
@@ -51,7 +56,6 @@ body{
 	0% { background-position: 0% 50%; }
 	100% { background-position: 100% 50%; }
 }
-
 
 
 
