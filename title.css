@@ -10,7 +10,8 @@
 	top: 18%;
 	left: 50%;
 	width: 40em;
-	margin: 0 0 0 -20em;
+    margin: 0 0 0 -20em;
+    z-index: 1;
 }
 
 .title h1{
