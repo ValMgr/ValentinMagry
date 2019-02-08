@@ -1,3 +1,6 @@
+/* Valentin Magry - MMI Bordeaux Montaigne Student - 2019 */
+
+
 body{
     background-color: rgb(0, 0, 0);
     color: rgb(255, 255, 255);
@@ -6,23 +9,83 @@ body{
     font-family: "Avant Garde", Avantgarde, "Century Gothic", CenturyGothic, "AppleGothic", sans-serif;
 }
 
-
-.Home{
-    position: absolute;
-}
-
-
 #email{
     float: left;
     position: absolute;
     top: 80%;
     left: -3%;
     text-decoration: underline;
+    color: white;
     -webkit-transform: rotate(-90deg);
 }
 
+a{
+    text-decoration: none;
+}
+
+#Works {
+    position: absolute;
+    top: 95%;
+    left: calc(50% - 76.4px);
+  }
+
+#Contacts {
+    position: absolute;
+    top: 50%;
+    right: -5%;
+    -webkit-transform: rotate(90deg);
+  }
+
+#AboutMe {
+    position: absolute;
+    top: calc(50%);
+    left: -5%;
+    -webkit-transform: rotate(-90deg);
+  }
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*   Logo Blink */
+#LogoBlink{
+     width: 2%;
+     padding: 1em 1em;
+     animation: Logoblink 4s infinite;
+}
+
+@keyframes Logoblink{
+    0% {
+        opacity: 1;
+    }
+
+    50% {
+        opacity: 0;
+    }
+}
 
 
 
