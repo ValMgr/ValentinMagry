@@ -28,7 +28,6 @@
 	display: block;
 	margin: 0 auto;
     text-shadow: 0 0 80px rgba(224, 22, 22, 0.562);
-	animation: Shadow 4s infinite;
 
 /*
 	background: url(Assets/animated_text_fill.png) repeat-y;
