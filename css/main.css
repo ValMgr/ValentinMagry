@@ -9,7 +9,7 @@ body{
     font-family: "Avant Garde", Avantgarde, "Century Gothic", CenturyGothic, "AppleGothic", sans-serif;
 }
 
-#email{
+/*#email{
     float: left;
     position: absolute;
     top: 80%;
@@ -17,7 +17,7 @@ body{
     text-decoration: underline;
     color: white;
     -webkit-transform: rotate(-90deg);
-}
+}*/
 
 a{
     text-decoration: none;
