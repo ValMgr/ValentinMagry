@@ -1,19 +1,57 @@
 
 body{
+    width: 100%;
     background-color: rgb(0, 0, 0);
     color: rgb(255, 255, 255);
     margin: 0;
     padding: 0;
     font-family: "Avant Garde", Avantgarde, "Century Gothic", CenturyGothic, "AppleGothic", sans-serif;
     text-align: center;
+    
 }
 
 .title{
-    font-size: 2.4vw;
-    top: 5%;
+    top: 3%;
+    left: 50%;
+    width: 95%;
+    height: 30%;
 }
 
-.glitch{
+/*#name{
+    font-size: 500%;
+}
+
+#Job{
+    font-size: 200%;
+}*/
+
+a{
+    text-decoration: none;
+}
+
+.Glitch{
     font-size: 2vw;
 }
 
+
+
+#Works {
+    position: absolute;
+    top: 50%;
+    left: calc(50% - 61.5px);
+    text-align:center;
+}
+
+#AboutMe {
+    position: absolute;
+    top: 55%;
+    left: calc(50% - 91px);
+    text-align:center;
+}
+
+#Contacts {
+    position: absolute;
+    top: 60%;
+    left: calc(50% - 95px);
+    text-align:center;
+}
