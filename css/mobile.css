@@ -5,10 +5,14 @@ body{
     margin: 0;
     padding: 0;
     font-family: "Avant Garde", Avantgarde, "Century Gothic", CenturyGothic, "AppleGothic", sans-serif;
-    font-size: 2vw;
+    text-align: center;
 }
 
-/*.title{
+.title{
+    font-size: 3vw;
+}
+
+.glitch{
     font-size: 2vw;
-}*/
+}
 
