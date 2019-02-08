@@ -5,9 +5,10 @@ body{
     margin: 0;
     padding: 0;
     font-family: "Avant Garde", Avantgarde, "Century Gothic", CenturyGothic, "AppleGothic", sans-serif;
+    font-size: 2vw;
 }
 
-.title{
-    font-size: 5vw;
-}
+/*.title{
+    font-size: 2vw;
+}*/
 
