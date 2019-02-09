@@ -41,20 +41,18 @@ a{
 
 /* TITLE */
 
-.center{
-  height: 100vh;
-  display: flex;
-}
 
 .title{
-  margin: auto;
+  margin-top: 50vh;
+  margin-left: 50vw;
+  transform: translate(-50%, -50%);
   text-transform: uppercase;
   text-align: center;
 	letter-spacing: .5em;
 	border: 4px double rgba(255,255,255,.25);
 	border-width: 4px 0;
 	padding: 1.5em 0em;
-    
+  display: block;
 	width: 40em;
 	z-index: 1;
 	
@@ -299,15 +297,18 @@ a{
     height: 100%;
   }
 
- 
+
 
   .title{
-    margin: 0.5em;
-    height: 10%;
+    letter-spacing: 0.3em;
+    width: unset;
+    transform: unset;
+    margin: 1em;
   }
 
   .title h1{
     font-size: 1em;
+    text-shadow: 0 0 40px rgba(241, 14, 14, 0.719);
   }
 
   .title p{
@@ -319,28 +320,75 @@ a{
         font-size: 2vw;
     }
     
-    
+    #Links{
+      position: absolute;
+      top: 50%;
+      width: 50%;
+    }
     
     #Works {
-        position: unset;
+        position: relative;
+        top: 10em;
+        left: 50%;
         text-align:center;
-        top: unset;
+
     }
     
     #AboutMe {
-        position: unset;
+        position: relative;
+        top: 5em;
+        left: 50%;
         text-align:center;
         -webkit-transform: rotate(0deg);
-        top: unset;
-        left: unset;
+
     }
     
     #Contacts {
-        position: unset;
-        -webkit-transform: rotate(0deg);
+        text-align:center;
+        position: relative;
         top: unset;
         right: unset;
+        left: 50%;
+        -webkit-transform: rotate(0deg);
+
     }
     
 
   }
+
+
+
+/* Loader */
+/*
+#Content {
+  display: none;
+}
+
+#loader {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  z-index: 1;
+  width: 150px;
+  height: 150px;
+  margin: -75px 0 0 -75px;
+  background-image: url(LogoVM.svg);
+  background-repeat: no-repeat;
+  background-size: 120px 120px;
+  width: 120px;
+  height: 120px;
+  animation: load 4s infinite;
+}
+
+@keyframes load {
+  0% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+  100%{
+    opacity: 0;
+  }
+}
+*/
