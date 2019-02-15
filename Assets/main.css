@@ -1,19 +1,110 @@
 /* Valentin Magry - MMI Bordeaux Montaigne Student - 2019 */
 
 
-/* MAIN */
+/* MAIN
+    --------------------------------------------------------------------------------------------------------------------------- */
+
+/*Import Font*/
+@import url('https://fonts.googleapis.com/css?family=Roboto');
+@import url('https://fonts.googleapis.com/css?family=Oswald:300,400,600');
+@import url('https://fonts.googleapis.com/css?family=Lato');
+
 
 body{
     width: 100%;
-    background-color: black;
+    background-color: rgb(15, 15, 15);
     color: rgb(255, 255, 255);
     margin: 0;
     padding: 0;
-    font-family: "Avant Garde", Avantgarde, "Century Gothic", CenturyGothic, "AppleGothic", sans-serif;
+}
+
+a{
+    text-decoration: none;
 }
 
 
-/* ça n'as pas de sens mais je trouve ça stylé tout de même */
+
+
+/* Accueil 
+    _________________*/
+
+  /* Title */
+
+.title{
+  margin-top: 50vh;
+  margin-left: 50vw;
+  transform: translate(-50%, -50%);
+  text-align: center;
+	padding: 1.5em 0em;
+  display: block;
+	width: 40em;
+
+	
+}
+
+.title h1{
+    font: 600 5em/1 "Oswald", sans-serif;
+  	letter-spacing: 5px;
+  	padding: .25em 0 .325em;
+	  display: block;
+    margin: 0 auto;
+    text-transform: uppercase;
+}
+
+.title h2{
+  font: 400 2em/1 "Oswald", sans-serif;
+  background-color: red;
+  width: 10em;
+  position: relative;
+  left: calc(50% - 160px);
+  
+
+}
+
+/* Links */
+
+.Links a{
+    text-align: center;
+    color: rgb(255, 255, 255);
+    font-size: 2em;
+    letter-spacing: 8px;
+    font-family: "Oswald";
+    font-weight: 400;
+    display: block;
+    margin: 0;
+    line-height: 0;
+}
+
+/*.Links a:hover{
+
+}*/ 
+
+
+#Works {
+  position: absolute;
+  top: 95%;
+  left: calc(50% - 76.4px);
+}
+
+#Contacts {
+  position: absolute;
+  top: 50%;
+  right: -5%;
+  -webkit-transform: rotate(90deg);
+}
+
+#AboutMe {
+  position: absolute;
+  top: calc(50%);
+  left: -5%;
+  -webkit-transform: rotate(-90deg);
+}
+
+
+
+
+
+
 /*
 .Pen-Effect{
   position: absolute;
@@ -29,99 +120,37 @@ body{
         calc(50% - 1px) calc(50% - 1px),
         calc(50% + 1px) calc(50% + 1px);
 
-}
-*/
-
-a{
-    text-decoration: none;
-}
+}*/
 
 
 
-#Works {
-    position: absolute;
-    top: 95%;
-    left: calc(50% - 76.4px);
-  }
-
-#Contacts {
-    position: absolute;
-    top: 50%;
-    right: -5%;
-    -webkit-transform: rotate(90deg);
-  }
-
-#AboutMe {
-    position: absolute;
-    top: calc(50%);
-    left: -5%;
-    -webkit-transform: rotate(-90deg);
-  }
-
-
-/* TITLE */
-
-
-.title{
-  margin-top: 50vh;
-  margin-left: 50vw;
-  transform: translate(-50%, -50%);
-  text-transform: uppercase;
-  text-align: center;
-	letter-spacing: .5em;
-	border: 4px double rgba(255,255,255,.25);
-	border-width: 4px 0;
-	padding: 1.5em 0em;
-  display: block;
-	width: 40em;
-	z-index: 1;
-	
-}
-
-.title h1{
-    font: 700 4em/1 "Oswald", sans-serif;
-  	letter-spacing: 0;
-  	padding: .25em 0 .325em;
-	display: block;
-	margin: 0 auto;
-    text-shadow: 0 0 80px rgba(241, 14, 14, 0.719);
-
-
-}
-
-
-
-/* GLITCH */
-
-
-
+/* GLITCH Effect  */
+/*
 .Glitch a {
     text-align: center;
     color: rgb(255, 255, 255);
     font-size: 2em;
     letter-spacing: 8px;
-    font-family: "Avant Garde", Avantgarde, "Century Gothic", CenturyGothic, "AppleGothic", sans-serif;
+    font-family: "Oswald";
     font-weight: 400;
   
-    /* Superposition */
+
     display: block;
     margin: 0;
     line-height: 0;
-  
-    /* Animation  */
-    /*animation: glitch1 2.5s infinite;*/
+
   }
   
   .Glitch a:nth-child(2) {
     display: none;
     color: #fc0808;
-    /*animation: glitch2 2.5s infinite;*/
+
   }
   
   .Glitch a:nth-child(3) {
     display: none;
     color: #686666;
-    /*animation: glitch3 2.5s infinite;*/
+
   }
   
   .Glitch a:hover:nth-child(1) {
@@ -138,7 +167,7 @@ a{
     animation: glitch3 2.5s infinite;
   }
   
-  /*Keyframes*/
+
   
   @keyframes glitch1 {
     0% {
@@ -305,10 +334,11 @@ a{
     }
   }
 
+*/
 
 
-
-  /* NTM LA VERSION MOBILE */
+  /* MOBILE VERSION
+    --------------------------------------------------------------------------------------------------------------------------- */
 
   @media screen and (max-width: 820px) {
 
@@ -336,15 +366,13 @@ a{
   }
 
 
-    .Glitch{
-        font-size: 2vw;
-    }
-    
-    #Links{
+    .Links{
+      font-size: 2vw;
       position: absolute;
       top: 55%;
       width: 50%;
     }
+    
     
     #Works {
         position: relative;
@@ -379,6 +407,7 @@ a{
 
 
 /* Loader */
+/* Ce ne seras pas utile mais sait-on jamais */
 /*
 #Content {
   display: none;
