@@ -53,7 +53,7 @@ a{
 
 .title h2{
   font: 400 2em/1 "Oswald", sans-serif;
-  background-color: red;
+  background-color: rgb(251, 5, 5);
   width: 10em;
   position: relative;
   left: calc(50% - 160px);
@@ -75,29 +75,40 @@ a{
     display: block;
     margin: 0;
     line-height: 0;
+    position: relative;
     z-index: 2;
+    
 
 }
 
 
-
 .links_underlined{
-  height: 20px;
-  width: 80px;
-  background-color: rgb(255, 0, 0);
+  height: 1em;
+  width: 5em;
+  border-radius: 3px;
+  background-color: rgb(251, 5, 5);
   display: none;
   position: relative;
-  top: 10px;
-  left: 17px;
+  top: 8px;
+  left: 30px;
   float: right;
   z-index: 1;
 }
 
 .Links :hover .links_underlined{
   display: block;
-
+  animation: LinkUnderline 0.1s linear;
 }
 
+@keyframes LinkUnderline {
+  from {
+    transform: translate(0);
+    left: -30px;
+  }
+  to {
+
+  }
+}
 
 #Works {
   position: absolute;
@@ -377,7 +388,6 @@ a{
 
   .title h1{
     font-size: 1.75em;
-    text-shadow: 0 0 50px rgba(241, 14, 14, 0.719);
   }
 
   .title p{
