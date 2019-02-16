@@ -57,11 +57,13 @@ a{
   width: 10em;
   position: relative;
   left: calc(50% - 160px);
-  
 
 }
 
+
 /* Links */
+
+
 
 .Links a{
     text-align: center;
@@ -73,11 +75,28 @@ a{
     display: block;
     margin: 0;
     line-height: 0;
+    z-index: 2;
+
 }
 
-/*.Links a:hover{
 
-}*/ 
+
+.links_underlined{
+  height: 20px;
+  width: 80px;
+  background-color: rgb(255, 0, 0);
+  display: none;
+  position: relative;
+  top: 10px;
+  left: 17px;
+  float: right;
+  z-index: 1;
+}
+
+.Links :hover .links_underlined{
+  display: block;
+
+}
 
 
 #Works {
@@ -89,14 +108,14 @@ a{
 #Contacts {
   position: absolute;
   top: 50%;
-  right: -5%;
+  right: -3%;
   -webkit-transform: rotate(90deg);
 }
 
 #AboutMe {
   position: absolute;
   top: calc(50%);
-  left: -5%;
+  left: -3%;
   -webkit-transform: rotate(-90deg);
 }
 
