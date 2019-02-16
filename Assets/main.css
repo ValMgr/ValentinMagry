@@ -10,6 +10,7 @@
 @import url('https://fonts.googleapis.com/css?family=Lato');
 
 
+
 body{
     width: 100%;
     background-color: rgb(0, 0, 0);
@@ -57,11 +58,12 @@ a{
   width: 10em;
   position: relative;
   left: calc(50% - 160px);
+  padding: 5px;
 
 }
 
 
-/* Links */
+  /* Links */
 
 
 
@@ -158,219 +160,6 @@ a{
 
 
 
-/* GLITCH Effect  */
-/*
-.Glitch a {
-    text-align: center;
-    color: rgb(255, 255, 255);
-    font-size: 2em;
-    letter-spacing: 8px;
-    font-family: "Oswald";
-    font-weight: 400;
-  
-
-    display: block;
-    margin: 0;
-    line-height: 0;
-
-  }
-  
-  .Glitch a:nth-child(2) {
-    display: none;
-    color: #fc0808;
-
-  }
-  
-  .Glitch a:nth-child(3) {
-    display: none;
-    color: #686666;
-
-  }
-  
-  .Glitch a:hover:nth-child(1) {
-    animation: glitch1 2.5s infinite;
-  }
-  
-  .Glitch:hover > a:nth-child(2){
-    display: block;
-    animation: glitch2 2.5s infinite;
-  }
-  
-  .Glitch:hover >  a:nth-child(3){
-    display: block;
-    animation: glitch3 2.5s infinite;
-  }
-  
-
-  
-  @keyframes glitch1 {
-    0% {
-      transform: none;
-      opacity: 1;
-    }
-    7% {
-      transform: skew(-0.5deg, -0.9deg);
-      opacity: 0.75;
-    }
-    10% {
-      transform: none;
-      opacity: 1;
-    }
-    27% {
-      transform: none;
-      opacity: 1;
-    }
-    30% {
-      transform: skew(0.8deg, -0.1deg);
-      opacity: 0.75;
-    }
-    35% {
-      transform: none;
-      opacity: 1;
-    }
-    52% {
-      transform: none;
-      opacity: 1;
-    }
-    55% {
-      transform: skew(-1deg, 0.2deg);
-      opacity: 0.75;
-    }
-    50% {
-      transform: none;
-      opacity: 1;
-    }
-    72% {
-      transform: none;
-      opacity: 1;
-    }
-    75% {
-      transform: skew(0.4deg, 1deg);
-      opacity: 0.75;
-    }
-    80% {
-      transform: none;
-      opacity: 1;
-    }
-    100% {
-      transform: none;
-      opacity: 1;
-    }
-  }
-  
-  @keyframes glitch2 {
-    0% {
-      transform: none;
-      opacity: 0.25;
-    }
-    7% {
-      transform: translate(-2px, -3px);
-      opacity: 0.5;
-    }
-    10% {
-      transform: none;
-      opacity: 0.25;
-    }
-    27% {
-      transform: none;
-      opacity: 0.25;
-    }
-    30% {
-      transform: translate(-5px, -2px);
-      opacity: 0.5;
-    }
-    35% {
-      transform: none;
-      opacity: 0.25;
-    }
-    52% {
-      transform: none;
-      opacity: 0.25;
-    }
-    55% {
-      transform: translate(-5px, -1px);
-      opacity: 0.5;
-    }
-    50% {
-      transform: none;
-      opacity: 0.25;
-    }
-    72% {
-      transform: none;
-      opacity: 0.25;
-    }
-    75% {
-      transform: translate(-2px, -6px);
-      opacity: 0.5;
-    }
-    80% {
-      transform: none;
-      opacity: 0.25;
-    }
-    100% {
-      transform: none;
-      opacity: 0.25;
-    }
-  }
-  
-  @keyframes glitch3 {
-    0% {
-      transform: none;
-      opacity: 0.25;
-    }
-    7% {
-      transform: translate(2px, 3px);
-      opacity: 0.5;
-    }
-    10% {
-      transform: none;
-      opacity: 0.25;
-    }
-    27% {
-      transform: none;
-      opacity: 0.25;
-    }
-    30% {
-      transform: translate(5px, 2px);
-      opacity: 0.5;
-    }
-    35% {
-      transform: none;
-      opacity: 0.25;
-    }
-    52% {
-      transform: none;
-      opacity: 0.25;
-    }
-    55% {
-      transform: translate(5px, 1px);
-      opacity: 0.5;
-    }
-    50% {
-      transform: none;
-      opacity: 0.25;
-    }
-    72% {
-      transform: none;
-      opacity: 0.25;
-    }
-    75% {
-      transform: translate(2px, 6px);
-      opacity: 0.5;
-    }
-    80% {
-      transform: none;
-      opacity: 0.25;
-    }
-    100% {
-      transform: none;
-      opacity: 0.25;
-    }
-  }
-
-*/
-
-
   /* MOBILE VERSION
     --------------------------------------------------------------------------------------------------------------------------- */
 
@@ -391,11 +180,15 @@ a{
   }
 
   .title h1{
-    font-size: 1.75em;
+    font-size: 3em;
   }
 
-  .title p{
-    font-size: 0.70em;
+  .title h2{
+    font-size: 1em;
+    width: 15em;
+    left: calc(50% - 7.5em);
+    letter-spacing: 3px;
+
   }
 
 
