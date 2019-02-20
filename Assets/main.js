@@ -1,4 +1,5 @@
-Barba.PJax.start();
+Barba.Pjax.start();
+
 
 var FadeTransition = Barba.BaseTransition.extend({
   start: function() {
