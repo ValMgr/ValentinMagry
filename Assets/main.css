@@ -151,15 +151,16 @@ a{
 
 
 
-.slide-in{
-  animation: slide-in 2s ease forwards;
+.slide-right{
+  animation: slide-right 2s ease forwards;
 }
 
-.slide-out{
-  animation: slide-out 2s ease forwards;
+.slide-left{
+  animation: slide-left 2s ease forwards;
 }
 
-@keyframes slide-in {
+
+@keyframes slide-right {
   from{
     transform: translateX(100%);
     visibility: visible;
@@ -169,7 +170,7 @@ a{
   }
 }
 
-@keyframes slide-out {
+@keyframes slide-left {
   from{
     transform: translateX(0%);
     visibility: visible;

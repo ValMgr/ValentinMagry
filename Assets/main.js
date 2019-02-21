@@ -1,7 +1,7 @@
 Barba.Pjax.start();
 
-
-var FadeTransition = Barba.BaseTransition.extend({
+/* Transition From Index to Contacts */
+var FromItoC = Barba.BaseTransition.extend({
   start: function() {
     /**
      * This function is automatically called as soon the Transition starts
@@ -10,42 +10,82 @@ var FadeTransition = Barba.BaseTransition.extend({
      */
 
     // As soon the loading is finished and the old page is faded out, let's fade the new page
-    Promise
-      .all([this.newContainerLoading, this.fadeOut()]).then(this.fadeIn.bind(this));
+    Promise.all([this.newContainerLoading, this.fadeOut()]).then(this.fadeIn.bind(this));
   },
 
   fadeOut: function() {
-    this.oldContainer.classList.add("slide-out");
+    this.oldContainer.classList.add("slide-left");
 
     this.oldContainer.addEventListener('animationstart', function(){
-      this.oldContainer.classList.remove("slide-out");
+      this.oldContainer.classList.remove("slide-left");
       this.done();
     });
   },
 
   fadeIn: function() {
-    this.newContainer.classList.add("slide-in");
+    this.newContainer.classList.add("slide-right");
 
     var that = this;
 
     this.newContainer.addEventListener('animationend', function(){
-      that.newContainer.classList.remove("slide-in");
+      that.newContainer.classList.remove("slide-right");
       that.done();
     });
   }
 });
 
-/**
- * Next step, you have to tell Barba to use the new Transition
- */
+
+/* Transition From Contacts to Index */
+var FromCtoI = Barba.BaseTransition.extend({
+  start: function() {
+    Promise.all([this.newContainerLoading, this.fadeOut()]).then(this.fadeIn.bind(this));
+  },
+
+  fadeOut: function() {
+    this.oldContainer.classList.add("slide-right");
+
+    this.oldContainer.addEventListener('animationstart', function(){
+      this.oldContainer.classList.remove("slide-right");
+      this.done();
+    });
+  },
+
+  fadeIn: function() {
+    this.newContainer.classList.add("slide-left");
+
+    var that = this;
+
+    this.newContainer.addEventListener('animationend', function(){
+      that.newContainer.classList.remove("slide-left");
+      that.done();
+    });
+  },
+
+
+  Valid: function() {
+    var prev = Barba.HistoryManager.prevStatus();
+
+    console.log(prev);
+    return prev.namespace === 'index'
+  }
+
+});
+
+
+
+
+
+/* Appel des transitions en fonctions des pages actuels et cibles */
 
 Barba.Pjax.getTransition = function() {
-  /**
-   * Here you can use your own logic!
-   * For example you can use different Transition based on the current page or link...
-   */
+  
+  
 
-  return FadeTransition;
+  
+  
+
+
+  
 };
 
 
