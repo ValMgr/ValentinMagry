@@ -22,8 +22,8 @@ var FadeTransition = Barba.BaseTransition.extend({
     var that = this;
 
     this.newContainer.addEventListener('animationend', function(){
-      that.newContainer.classList.remove('slide-in');
-      that.done;
+      that.newContainer.classList.remove("slide-in");
+      that.done();
     });
   }
 });
