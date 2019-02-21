@@ -61,18 +61,7 @@ var FromCtoI = Barba.BaseTransition.extend({
     });
   },
 
-
-  Valid: function() {
-    var prev = Barba.HistoryManager.prevStatus();
-
-    console.log(prev);
-    return prev.namespace === 'index'
-  }
-
 });
-
-
-
 
 
 /* Appel des transitions en fonctions des pages actuels et cibles */
@@ -80,7 +69,7 @@ var FromCtoI = Barba.BaseTransition.extend({
 Barba.Pjax.getTransition = function() {
   
   
-
+  if()
   
   
 
