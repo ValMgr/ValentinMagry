@@ -14,7 +14,14 @@ var FadeTransition = Barba.BaseTransition.extend({
       .all([this.newContainerLoading, this.fadeOut()]).then(this.fadeIn.bind(this));
   },
 
-  fadeOut: function() {},
+  fadeOut: function() {
+    this.oldContainer.classList.add("slide-out");
+
+    this.oldContainer.addEventListener('animationstart', function(){
+      this.oldContainer.classList.remove("slide-out");
+      this.done();
+    });
+  },
 
   fadeIn: function() {
     this.newContainer.classList.add("slide-in");

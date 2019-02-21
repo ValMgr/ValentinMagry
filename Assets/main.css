@@ -152,7 +152,11 @@ a{
 
 
 .slide-in{
-  animation: slide-in 1s ease forwards;
+  animation: slide-in 2s ease forwards;
+}
+
+.slide-out{
+  animation: slide-out 2s ease forwards;
 }
 
 @keyframes slide-in {
@@ -162,6 +166,16 @@ a{
   }
   to{
     transform: translateX(0%);
+  }
+}
+
+@keyframes slide-out {
+  from{
+    transform: translateX(0%);
+    visibility: visible;
+  }
+  to{
+    transform: translateX(100%);
   }
 }
 
