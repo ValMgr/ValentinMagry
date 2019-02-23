@@ -11,22 +11,29 @@
 
 
 
-body{
-    width: 100%;
-    height: 100vh;
-    background-color: rgb(0, 0, 0);
-    color: rgb(255, 255, 255);
-    margin: 0;
-    padding: 0;
-    position: absolute;
-    overflow: hidden;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
+body{
+  background-color: rgb(0, 0, 0);
+  overflow: hidden;
+  }
 
 a{
     text-decoration: none;
 }
 
+.bodypage{
+  width: 100%;
+  height: 100vh;
+  background-color: rgb(0, 0, 0);
+  color: rgb(255, 255, 255);
+  position: absolute;
+
+}
 
 
 
@@ -151,16 +158,24 @@ a{
 
 
 
-.slide-right{
-  animation: slide-right 2s ease forwards;
+.slide-FromRight{
+  animation: slide-FromRight 2s ease forwards;
 }
 
-.slide-left{
-  animation: slide-left 2s ease forwards;
+.slide-ToRight{
+  animation: slide-ToRight 2s ease forwards;
+}
+
+.slide-FromLeft{
+  animation: slide-FromLeft 2s ease forwards;
+}
+
+.slide-ToLeft{
+  animation: slide-ToLeft 2s ease forwards;
 }
 
 
-@keyframes slide-right {
+@keyframes slide-FromRight {
   from{
     transform: translateX(100%);
     visibility: visible;
@@ -170,7 +185,7 @@ a{
   }
 }
 
-@keyframes slide-left {
+@keyframes slide-ToRight {
   from{
     transform: translateX(0%);
     visibility: visible;
@@ -180,6 +195,25 @@ a{
   }
 }
 
+@keyframes slide-FromLeft{
+  from{
+    transform: translateX(-100%);
+    visibility: visible;
+  }
+  to{
+    transform: translateX(0%);
+  }
+}
+
+@keyframes slide-ToLeft{
+  from{
+    transform: translateX(0%);
+    visibility: visible;
+  }
+  to{
+    transform: translateX(-100%);
+  }
+}
 
 
 
