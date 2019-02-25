@@ -45,7 +45,7 @@ var FromItoC = Barba.BaseTransition.extend({
     
     console.log(prev.namespace + ' to ' + next);
 
-    return prev.namespace === 'index' && next ===  'http://valentin-magry.fr/contact.html';
+    return prev.namespace === 'index' && next ===  'contact.html';
 
   }
 
@@ -88,7 +88,7 @@ var FromCtoI = Barba.BaseTransition.extend({
     
     console.log(prev.namespace + ' to ' + next);
 
-    return prev.namespace === 'contact' && next === 'http://valentin-magry.fr/index.html';
+    return prev.namespace === 'contact' && next === 'index.html';
 
   }
 
@@ -132,7 +132,7 @@ var FromItoA = Barba.BaseTransition.extend({
     
     console.log(prev.namespace + ' to ' + next);
 
-    return prev.namespace === 'index' && next === 'http://valentin-magry.fr/about.html';
+    return prev.namespace === 'index' && next === 'about.html';
 
   }
 
@@ -174,7 +174,7 @@ valid: function(){
   
   console.log(prev.namespace + ' to ' + next);
 
-  return prev.namespace === 'about' && next === 'http://valentin-magry.fr/index.html';
+  return prev.namespace === 'about' && next === 'index.html';
 
 }
 
@@ -216,7 +216,7 @@ valid: function(){
   
   console.log(prev.namespace + ' to ' + next);
 
-  return prev.namespace === 'index' && next === 'http://valentin-magry.fr/works.html';
+  return prev.namespace === 'index' && next === 'works.html';
 
 }
 
@@ -258,7 +258,7 @@ valid: function(){
   
   console.log(prev.namespace + ' to ' + next);
 
-  return prev.namespace === 'works' && next === 'http://valentin-magry.fr/index.html';
+  return prev.namespace === 'works' && next === 'index.html';
 
 }
 
