@@ -117,9 +117,7 @@ a{
   animation: LinkUnderline 0.1s linear;
 }
 
-.Links a:hover{
-  font-size: 2.1em;
-}
+
 
 @keyframes LinkUnderline {
   from {
@@ -174,6 +172,21 @@ a{
   animation: slide-ToLeft 2s ease forwards;
 }
 
+.slide-ToBottom{
+  animation: slide-ToBottom 2s ease forwards;
+}
+
+.slide-FromBottom{
+  animation: slide-FromBottom 2s ease forwards;
+}
+
+.slide-ToTop{
+  animation: slide-ToTop 2s ease forwards;
+}
+
+.slide-FromTop{
+  animation: slide-FromTop 2s ease forwards;
+}
 
 @keyframes slide-FromRight {
   from{
@@ -215,6 +228,45 @@ a{
   }
 }
 
+@keyframes slide-ToBottom{
+  from{
+    transform: translateY(0vh);
+    visibility: visible;
+  }
+  to{
+    transform: translateY(100vh);
+  }
+}
+
+@keyframes slide-FromBottom{
+  from{
+    transform: translateY(100vh);
+    visibility: visible;
+  }
+  to{
+    transform: translateY(0vh);
+  }
+}
+
+@keyframes slide-ToTop{
+  from{
+    transform: translateY(0vh);
+    visibility: visible;
+  }
+  to{
+    transform: translateY(-100vh);
+  }
+}
+
+@keyframes slide-FromTop{
+  from{
+    transform: translateY(-100vh);
+    visibility: visible;
+  }
+  to{
+    transform: translateY(0vh);
+  }
+}
 
 
 
