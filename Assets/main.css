@@ -32,7 +32,6 @@ a{
   background-color: rgb(20, 20, 20);
   color: rgb(255, 255, 255);
   position: absolute;
-
 }
 
 
@@ -154,6 +153,7 @@ a{
 /* AboutMe 
     _________________*/
 
+  /* Title */
 
   .title-about{
     width: 3em;
@@ -174,12 +174,16 @@ a{
     color: rgb(20, 20, 20);
   }
 
+  /* Link */
+
   #About-GoBack {
     position: absolute;
     top: 50%;
     right: -3%;
     -webkit-transform: rotate(90deg);
   }
+
+  /* Content */
 
   .about-content{
     width: 50vw;
@@ -203,6 +207,8 @@ a{
   /* Contact 
     _________________*/
 
+    /* Title */
+
     .title-contact{
       width: 3em;
       position: absolute;
@@ -212,6 +218,13 @@ a{
       text-transform: uppercase;
     }
 
+    #contact-title{
+      text-shadow: #ff0000 1px 1px, #ff0000 -1px 1px, #f80101 -1px -1px, #ff0000 1px -1px;
+      color: rgb(20, 20, 20);
+    }
+
+    /* Link */
+
     #Contact-GoBack {
       position: absolute;
       top: 50%;
@@ -219,13 +232,98 @@ a{
       -webkit-transform: rotate(-90deg);
     }
 
-    #contact-title{
-      text-shadow: #ff0000 1px 1px, #ff0000 -1px 1px, #f80101 -1px -1px, #ff0000 1px -1px;
-      color: rgb(20, 20, 20);
+    /* Form */
+
+    .contact-content{
+      width: 50vw;
+      position: relative;
+      top: 40%;
+      left: calc(50% - 25vw);
+      font: 300 1em/1 "Oswald", sans-serif;
     }
 
-    /* Contact 
+
+
+    .Name{
+      width: 50%;
+      padding: 2em;
+    }
+
+    #N1{
+      float: left;
+    }
+
+    #N2{
+      float: right;
+    }
+
+    .email{
+      width: 100%;
+      padding: 2em;
+    }
+
+    input[type=text] {
+      width: 100%;
+      padding: 12px 20px;
+      margin: 8px 0;
+      display: inline-block;
+      border: none;
+      border-bottom: 1px solid rgb(75, 75, 75);
+      background: rgb(20, 20, 20);
+      box-sizing: border-box;
+      font: 300 1.3em/1 "Oswald", sans-serif;
+      color: white;
+    }
+
+    input[type=text]:focus, input[type=text]:hover {
+      border-bottom: 1px solid rgb(255, 0, 0);      
+    }
+
+    .label{
+      color: rgb(121, 121, 121);
+    }
+
+    textarea{
+      width: 100%;
+      height: 50px;
+      padding: 12px 20px;
+      margin: 8px 0;
+      box-sizing: border-box;
+      border: none;
+      border-bottom: 1px solid rgb(121, 121, 121);
+      background-color: rgb(20, 20, 20);
+      resize: none;
+      font: 300 1.3em/1 "Oswald", sans-serif;
+      color: white;
+    }
+
+    textarea:focus, textarea:hover{
+      border-bottom: 1px solid rgb(255, 0, 0);      
+    }
+
+  
+
+    #submit{
+      width: 150px;
+      height: 50px;
+      font: 300 2em/1 "Oswald", sans-serif;
+      float: right;
+      background-color: rgb(20, 20, 20);
+      color: rgb(255, 0, 0);
+      border: 1px solid rgb(255, 0, 0);
+      cursor: pointer;
+    }
+
+    #submit:hover{
+      background-color: rgb(25, 25, 25);
+    }
+    
+
+
+    /* Works 
     _________________*/
+
+    /* Title */
 
     .title-works{
       width: 3em;
@@ -248,10 +346,34 @@ a{
       color: rgb(20, 20, 20);
     }
 
+    /* Link */
+
     #Works-GoBack {
       position: absolute;
       top: 5%;
       right: 5%;
+    }
+
+
+    /* Works Presentation */
+
+    .works-img{
+      height: 15em;
+      width: 45%;
+      margin: 1em;
+      filter: grayscale(100%) brightness(30%) sepia(100%) hue-rotate(-50deg) saturate(600%) contrast(1.3) drop-shadow(10px 10px 4px #9e0f0f);
+      
+    }
+
+    .works-content{
+      width: 50vw;
+      position: relative;
+      top: 42.5%;
+      left: calc(50% - 25vw);
+    }
+
+    .Works-Links:hover > .works-img{
+      filter: grayscale(100%) brightness(30%) sepia(100%) hue-rotate(-50deg) saturate(600%) contrast(1) drop-shadow(10px 10px 4px #be3333);
     }
 
 
