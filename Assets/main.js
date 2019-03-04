@@ -4,6 +4,44 @@
 Barba.Pjax.start();
 
 
+
+Barba.Pjax.getTransition = function () {
+  var newPage = Barba.HistoryManager.currentStatus().url.split('/').pop()
+  var prevPage = Barba.HistoryManager.prevStatus().url.split('/').pop()
+  console.log("From " + prevPage + " to " + newPage)
+
+  if ( (prevPage === 'index.html' || prevPage === '' ) && newPage === 'about.html') {
+    return FromItoA;
+  }
+
+  if ( (prevPage === 'about.html' || prevPage === '' ) && newPage === 'index.html') {
+    return FromAtoI
+  }
+
+  if ( (prevPage === 'index.html' || prevPage === '' ) && newPage === 'works.html') {
+    return FromItoW
+  }
+
+  if ( (prevPage === 'works.html' || prevPage === '' ) && newPage === 'index.html') {
+    return FromWtoI
+  }
+
+  if ( (prevPage === 'index.html' || prevPage === '' ) && newPage === 'contact.html') {
+    return FromItoC
+  }
+
+  if ( (prevPage === 'contact.html' || prevPage === '' ) && newPage === 'index.html') {
+    return FromCtoI
+  }
+
+
+  else {
+    return fade;
+  }
+}
+
+
+
 /* Transition From Index to Contact
                                      ----------------------------------------------------------------------------------------------------------------------*/
 var FromItoC = Barba.BaseTransition.extend({
@@ -36,19 +74,7 @@ var FromItoC = Barba.BaseTransition.extend({
       that.newContainer.classList.remove("slide-FromRight");
       that.done();
     });
-  },
-
-  valid: function(){
-
-    var prev = Barba.HistoryManager.prevStatus();
-    var next = location.pathname.substr(1);
-    
-    console.log(prev.namespace + ' to ' + next);
-
-    return prev.namespace === 'index' && next ===  'contact.html';
-
   }
-
 
 });
 
@@ -79,17 +105,6 @@ var FromCtoI = Barba.BaseTransition.extend({
       that.newContainer.classList.remove("slide-FromLeft");
       that.done();
     });
-  },
-
-  valid: function(){
-
-    var prev = Barba.HistoryManager.prevStatus();
-    var next = location.pathname.substr(1);
-    
-    console.log(prev.namespace + ' to ' + next);
-
-    return prev.namespace === 'contact' && next === 'index.html';
-
   }
 
 
@@ -123,17 +138,6 @@ var FromItoA = Barba.BaseTransition.extend({
       that.newContainer.classList.remove("slide-FromLeft");
       that.done();
     });
-  },
-
-  valid: function(){
-
-    var prev = Barba.HistoryManager.prevStatus();
-    var next = location.pathname.substr(1);
-    
-    console.log(prev.namespace + ' to ' + next);
-
-    return prev.namespace === 'index' && next === 'about.html';
-
   }
 
 
@@ -165,17 +169,6 @@ fadeIn: function() {
     that.newContainer.classList.remove("slide-FromRight");
     that.done();
   });
-},
-
-valid: function(){
-
-  var prev = Barba.HistoryManager.prevStatus();
-  var next = location.pathname.substr(1);
-  
-  console.log(prev.namespace + ' to ' + next);
-
-  return prev.namespace === 'about' && next === 'index.html';
-
 }
 
 
@@ -207,17 +200,6 @@ fadeIn: function() {
     that.newContainer.classList.remove("slide-FromBottom");
     that.done();
   });
-},
-
-valid: function(){
-
-  var prev = Barba.HistoryManager.prevStatus();
-  var next = location.pathname.substr(1);
-  
-  console.log(prev.namespace + ' to ' + next);
-
-  return prev.namespace === 'index' && next === 'works.html';
-
 }
 
 
@@ -249,97 +231,39 @@ fadeIn: function() {
     that.newContainer.classList.remove("slide-FromTop");
     that.done();
   });
-},
-
-valid: function(){
-
-  var prev = Barba.HistoryManager.prevStatus();
-  var next = location.pathname.substr(1);
-  
-  console.log(prev.namespace + ' to ' + next);
-
-  return prev.namespace === 'works' && next === 'index.html';
-
 }
 
 
 });
 
 
+/* Transition Fade for everything else
+                                     ----------------------------------------------------------------------------------------------------------------------*/
+var fade = Barba.BaseTransition.extend({
 
+start: function() {
+Promise.all([this.newContainerLoading, this.fadeOut()]).then(this.fadeIn.bind(this));
+},
 
+fadeOut: function() {
+  this.oldContainer.classList.add("fade-out");
 
-/* Appel des transitions en fonctions des pages actuels et cibles */
+  this.oldContainer.addEventListener('animationstart', function(){
+    this.oldContainer.classList.remove("fade-out");
+    this.done();
+  });
+},
 
-Barba.Pjax.getTransition = function() {
-  
+fadeIn: function() {
+  this.newContainer.classList.add("fade-in");
 
-if(FromCtoI.valid()){
-  return FromCtoI;
+  var that = this;
+
+  this.newContainer.addEventListener('animationend', function(){
+    that.newContainer.classList.remove("fade-in");
+    that.done();
+  });
 }
 
-if(FromItoC.valid()){
-  return FromItoC;
-}
 
-if(FromItoA.valid()){
-  return FromItoA;
-}
-
-if(FromAtoI.valid()){
-  return FromAtoI;
-}
-
-if(FromItoW.valid()){
-  return FromItoW;
-}
-
-if(FromWtoI.valid()){
-  return FromWtoI;
-}
-  
-};
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-// Loader
-/*var Load;
-    
-    function myLoader() {
-      Load = setTimeout(showPage, 6000);
-    }
-    
-    function showPage() {
-      document.getElementById("Loader").style.display = "none";
-      document.getElementById("Content").style.display = "block";
-    }
-*/
+});

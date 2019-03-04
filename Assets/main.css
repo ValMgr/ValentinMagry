@@ -1,5 +1,6 @@
+/* ====================================================== */
 /* Valentin Magry - MMI Bordeaux Montaigne Student - 2019 */
-
+/* ====================================================== */
 
 /* MAIN
     --------------------------------------------------------------------------------------------------------------------------- */
@@ -380,6 +381,10 @@ a{
 /*    Page Transition
       --------------------------------------------------------------------------------------------------------------------- */
 
+      .overflow{
+        overflow-x: hidden;
+        overflow-y: visible;
+      }
 
 
 .slide-FromRight{
@@ -414,6 +419,33 @@ a{
   animation: slide-FromTop 2s ease forwards;
 }
 
+.fade-in{
+  animation: fade-in 1s ease forwards;
+}
+
+.fade-out{
+  animation: fade-out 1s ease forwards;
+}
+
+@keyframes fade-in{
+  0%{
+    opacity: 0
+  }
+  100% {
+    opacity: 1
+  }
+}
+
+@keyframes fade-out{
+  0%{
+    opacity: 1
+  }
+  100% {
+    opacity: 0
+  }
+}
+
+
 @keyframes slide-FromRight {
   from{
     transform: translateX(100%);
@@ -438,7 +470,7 @@ a{
   from{
     transform: translateX(-100%);
     visibility: visible;
-  }
+    }
   to{
     transform: translateX(0%);
   }
@@ -559,16 +591,22 @@ a{
 
 
     .Links{
-      font-size: 2vw;
       position: absolute;
-      top: 55%;
+      height: 0;
+      top: 40%;
       width: 50%;
+
+    }
+
+    .Links a{
+      letter-spacing: 3px;
+      font-size: 1.5em;
     }
     
     
     #Works {
         position: relative;
-        top: 10em;
+        top: 7em;
         left: 50%;
         text-align:center;
 
@@ -592,7 +630,21 @@ a{
         -webkit-transform: rotate(0deg);
 
     }
+
+    .links_underlined {
+      left: unset;
+      animation: LinkUnderlineMobile 1s linear;
+    }
     
+    @keyframes LinkUnderlineMobile {
+      from {
+        transform: translate(0);
+        left: -100px;
+      }
+      to {
+    
+      }
+    }
 
   }
 
