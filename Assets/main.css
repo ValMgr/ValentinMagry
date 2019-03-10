@@ -236,7 +236,7 @@ a{
     /* Form */
 
     .contact-content{
-      width: 50vw;
+      width: 50vw;  
       position: relative;
       top: 40%;
       left: calc(50% - 25vw);
@@ -381,7 +381,7 @@ a{
 /*    Page Transition
       --------------------------------------------------------------------------------------------------------------------- */
 
-      #scroll{
+      .scroll{
         overflow-x: hidden;
         overflow-y: scroll;
       }
