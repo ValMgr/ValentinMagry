@@ -378,6 +378,27 @@ a{
     }
 
 
+
+    /* Project Page Presentation */
+    
+    .title-project{
+      font: 600 5em/1 "Oswald", sans-serif;
+      text-shadow: #ff0000 1px 1px, #ff0000 -1px 1px, #f80101 -1px -1px, #ff0000 1px -1px;
+      color: rgb(20, 20, 20);
+      width: 10em;
+      position: absolute;
+      top: 10%;
+      left: calc(50% - 4em);
+      text-transform: uppercase;
+    }
+
+    #Project-GoBack {
+      position: absolute;
+      top: 5%;
+      right: 5%;
+    }
+
+
 /*    Page Transition
       --------------------------------------------------------------------------------------------------------------------- */
 
@@ -420,11 +441,11 @@ a{
 }
 
 .fade-in{
-  animation: fade-in 1s ease forwards;
+  animation: fade-in 2s ease forwards;
 }
 
 .fade-out{
-  animation: fade-out 1s ease forwards;
+  animation: fade-out 2s ease forwards;
 }
 
 @keyframes fade-in{
