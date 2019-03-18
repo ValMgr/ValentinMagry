@@ -259,6 +259,13 @@ fadeOut: function() {
     this.oldContainer.classList.remove("fade-out");
     this.done();
   });
+
+  return new Promise(function (resolve, reject) {
+    window.setTimeout(function () {
+        resolve();
+    }, 1000);
+  });
+
 },
 
 fadeIn: function() {
