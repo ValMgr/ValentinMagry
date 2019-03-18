@@ -23,6 +23,15 @@ body{
   overflow-x: hidden;
   }
 
+
+.unscroll{
+  overflow-y: hidden;
+}
+
+.scroll{
+    overflow-y: visible;
+  }
+
 a{
     text-decoration: none;
 }
@@ -196,8 +205,7 @@ a{
   }
 
   #portrait{
-    height: 25em;
-    width: 20em;
+    width: 60%;
   }
 
   .AboutMe-Text{
@@ -657,6 +665,23 @@ a{
       left: 5%;
     }
 
+
+    #About-GoBack {
+      position: absolute;
+      top: 5%;
+      left: -3%;
+      -webkit-transform: rotate(0);
+    }
+
+    .AboutMe-Text{
+      position: relative;
+      transform: unset;
+      font: 400 1.2em/1 "Lato", sans-serif;
+      line-height: 30px;
+    }
+
+
+
     .links_underlined {
       left: unset;
       animation: LinkUnderlineMobile 1s linear;
@@ -670,6 +695,9 @@ a{
       to {
     
       }
+
+
+
     }
 
   }

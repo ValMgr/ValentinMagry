@@ -72,6 +72,7 @@ var FromItoC = Barba.BaseTransition.extend({
 
     this.newContainer.addEventListener('animationend', function(){
       that.newContainer.classList.remove("slide-FromRight");
+      
       that.done();
     });
   }
@@ -196,12 +197,13 @@ fadeIn: function() {
 
 
 
+
   var that = this;
 
 
   this.newContainer.addEventListener('animationend', function(){
     that.newContainer.classList.remove("slide-FromBottom");
-    //that.newContainer.classList.add("scroll");
+
 
     that.done();
   });
@@ -272,3 +274,4 @@ fadeIn: function() {
 
 
 });
+
