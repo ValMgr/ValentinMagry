@@ -215,6 +215,51 @@ a{
     line-height: 30px;
   }
 
+  #CV_display{
+    color: red;
+  }
+
+  .slideParent {
+    display:block;
+    -webkit-animation:linear text-slide 20s infinite ;
+    -moz-animation:linear text-slide 20s infinite ;
+    -o-animation:linear text-slide 20s infinite ;
+    -ms-animation:linear text-slide 20s infinite ;
+    animation:linear text-slide 20s infinite ;
+    margin-left:-100%;
+    padding:0 5px;
+    text-align:left;
+    height:25px;
+  }
+
+  .slide:after {
+    content:attr(data-text);
+    position:absolute;
+    white-space:nowrap;
+    padding-left:10px;
+  }
+
+  @-webkit-keyframes text-slide {
+    0%, 100% {margin-left:0;}
+    99.99% {margin-left:-100%;}
+   }
+  @-moz-keyframes text-slide {
+    0%, 100% {margin-left:0;}
+    99.99% {margin-left:-100%;}
+   }
+  @-o-keyframes text-slide {
+    0%, 100% {margin-left:0;}
+    99.99% {margin-left:-100%;}
+   }
+  @-ms-keyframes text-slide {
+    0%, 100% {margin-left:0;}
+    99.99% {margin-left:-100%;}
+   }
+  @keyframes text-slide {
+    0%, 100% {margin-left:0;}
+    99.99% {margin-left:-100%;}
+   }
+
   /* Contact 
     _________________*/
 
@@ -287,7 +332,8 @@ a{
     }
 
     input[type=text]:focus, input[type=text]:hover {
-      border-bottom: 1px solid rgb(255, 0, 0);      
+      border-bottom: 1px solid rgb(255, 0, 0);
+      outline: none;      
     }
 
     .label{
@@ -309,7 +355,8 @@ a{
     }
 
     textarea:focus, textarea:hover{
-      border-bottom: 1px solid rgb(255, 0, 0);      
+      border-bottom: 1px solid rgb(255, 0, 0);
+      outline: none;      
     }
 
   
@@ -699,6 +746,10 @@ a{
       transform: unset;
       font: 400 1.2em/1 "Lato", sans-serif;
       line-height: 30px;
+    }
+
+    .linke{
+      width: unset;
     }
 
 
