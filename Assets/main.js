@@ -1,5 +1,5 @@
 /* Valentin Magry - MMI Bordeaux Montaigne Student - 2019 */
-/* Using Barba.js http://barbajs.org/ */
+/* Using Barba.js v1 http://barbajs.org/ */
 
 Barba.Pjax.start();
 
@@ -217,7 +217,7 @@ fadeIn: function() {
 var FromWtoI = Barba.BaseTransition.extend({
 
 start: function() {
-Promise.all([this.newContainerLoading, this.fadeOut()]).then(this.fadeIn.bind(this));
+  Promise.all([this.newContainerLoading, this.fadeOut()]).then(this.fadeIn.bind(this));
 },
 
 fadeOut: function() {
@@ -246,39 +246,29 @@ fadeIn: function() {
 
 /* Transition Fade for everything else
                                      ----------------------------------------------------------------------------------------------------------------------*/
-var fade = Barba.BaseTransition.extend({
-
-start: function() {
-Promise.all([this.newContainerLoading, this.fadeOut()]).then(this.fadeIn.bind(this));
-},
-
-fadeOut: function() {
-  this.oldContainer.classList.add("fade-out");
-
-  this.oldContainer.addEventListener('animationstart', function(){
-    this.oldContainer.classList.remove("fade-out");
-    this.done();
+    var fade = Barba.BaseTransition.extend({
+    start: function () {
+      Promise.all([this.newContainerLoading, this.fadeOut()]).then(this.fadeIn.bind(this));
+    },
+  
+    fadeOut: function () {
+      var oldWrap = this.oldContainer;
+      oldWrap.classList.remove('fade-in');
+      oldWrap.classList.add('fade-out');
+      
+      return new Promise(function (resolve, reject) {
+        window.setTimeout(function () {
+            resolve();
+        }, 1500);
+      });
+  
+    },
+    fadeIn: function () {
+      document.body.scrollTop = -2;//scroll to top
+      document.documentElement.scrollTop = 0;
+        
+      var newWrap = this.newContainer;
+      newWrap.classList.add('fade-in');
+      this.done();
+    }
   });
-
-  return new Promise(function (resolve, reject) {
-    window.setTimeout(function () {
-        resolve();
-    }, 1000);
-  });
-
-},
-
-fadeIn: function() {
-  this.newContainer.classList.add("fade-in");
-
-  var that = this;
-
-  this.newContainer.addEventListener('animationend', function(){
-    that.newContainer.classList.remove("fade-in");
-    that.done();
-  });
-}
-
-
-});
-
