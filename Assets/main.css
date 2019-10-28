@@ -215,6 +215,7 @@ a{
 
   #portrait{
     width: 50%;
+    opacity: 0.8;
   }
 
   .AboutMe-Text{
@@ -251,6 +252,18 @@ a{
     overflow: hidden;
   }
 
+  .AboutMe-banner{
+    position: absolute;
+    height: 100px;
+    font-weight: normal;
+    font-style: normal;
+    font-family: Oswald;
+    font-size: 4em;
+    color: white;
+    bottom: 0;
+    white-space: nowrap;
+  }
+
   @-webkit-keyframes text-slide {
     0%, 100% {margin-left:0;}
     99.99% {margin-left:-100%;}
@@ -271,6 +284,24 @@ a{
     0%, 100% {margin-left:0;}
     99.99% {margin-left:-100%;}
    }
+
+  .word-fadeOut{
+    animation: word-fadeOut 1.5s ease;
+    opacity: 0;
+  }
+  .word-fadeIn{
+    animation: word-fadeIn 1.5s ease;
+    opacity: 1;
+  } 
+
+  @keyframes word-fadeOut{
+    0% {opacity: 1;}
+    100% {opacity: 0;}
+  }
+  @keyframes word-fadeIn{
+    0% {opacity: 0;}
+    100% {opacity: 1;}
+  }
 
   /* .slideParent {
     display:block;
@@ -573,8 +604,8 @@ a{
     .project-header{
       position: relative;
       top: 10%;
-      width: 100vw;
-      height: 50vh;
+      display: block;
+
     }
 
     .project-title{
@@ -582,19 +613,15 @@ a{
       text-shadow: #ff0000 1px 1px, #ff0000 -1px 1px, #f80101 -1px -1px, #ff0000 1px -1px;
       color: rgb(20, 20, 20);
       text-transform: uppercase;
-      position: absolute;
-      left: calc(50% - 3.5em);
-
-      
+      text-align: center;
+      margin: 25px;
    }
 
     .project-subtitle{
-      position: absolute;
       font: 400 1.8em/1 "Oswald", sans-serif;
       color: white;
-      top: 35%;
-      left: calc(50% - 3.5em);
-
+      text-align: center;
+      margin: 50px;
     }
 
     #Project-GoBack {
@@ -603,7 +630,32 @@ a{
       right: 5%;
     }
 
-   
+    .project-content{
+      position: relative;
+      top: 15%;
+    }
+
+    #project-description{
+      text-align: center;
+      font: 200 1.3em/1 "Roboto", sans-serif;
+      color: white;
+      margin: 30px;
+      line-height: 25px;
+    }
+
+    #project-description a{
+      text-decoration: underline;
+      color: #ff000075;
+    }
+
+    #project-description a:hover{
+      color: rgba(255, 90, 90, 0.432);
+    }
+
+    .videoWrapper{
+      text-align: center;
+      margin: 50px;
+    }
 
 
 /*    Page Transition
@@ -763,22 +815,22 @@ a{
 
 
 
-/*
-.Pen-Effect{
+
+/* .Pen-Effect{
   position: absolute;
   width: 100%;
   height: 100%;
   top: 0;
   background:
-        url(A400M.png),
-        url(A400M.png);
+        url(IMG/Portrait.png),
+        url(IMG/Portrait.png);
     background-size: cover;
     background-blend-mode: difference;
     background-position:
         calc(50% - 1px) calc(50% - 1px),
         calc(50% + 1px) calc(50% + 1px);
 
-}*/
+} */
 
 
 
@@ -923,6 +975,23 @@ a{
     }
 
   }
+
+
+  
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
 
 
 

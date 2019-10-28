@@ -132,15 +132,17 @@ var FromItoA = Barba.BaseTransition.extend({
 
   fadeIn: function() {
     this.newContainer.classList.add("slide-FromLeft");
-
+    startWordSwitch();
     var that = this;
 
     this.newContainer.addEventListener('animationend', function(){
       that.newContainer.classList.remove("slide-FromLeft");
       that.done();
+
     });
   }
 
+  
 
 });
 
@@ -272,3 +274,67 @@ fadeIn: function() {
       this.done();
     }
   });
+
+
+
+
+
+  var startText = [];
+  var el;
+
+  function startWordSwitch(i, delay){
+
+    el = document.getElementsByClassName('word-switch');
+  
+    for (let i = 0; i < el.length; i++) {
+      var delay = i * 2000 + (Math.random() * 1000);
+  
+      startText[i] = el[i].innerHTML;
+      text = startText[i];
+      var newtext = text.split(",");
+      el[i].innerHTML = newtext[0];
+
+      setTimeout(function(){
+        WordSwitch(el[i], i);
+      }, delay);
+    }
+  
+  }
+
+
+ function WordSwitch(el, index){
+
+    
+
+    var text = startText[index];
+    var Newtext = text.split(",");
+    el.innerHTML = Newtext[0];
+
+    Switch(el, Newtext);
+
+    setInterval(function(){
+      Switch(el, Newtext);
+    }, 6000);
+      
+ }
+
+ function Switch(el, text){
+
+  el.classList.remove("word-fadeIn");
+  el.classList.remove("word-fadeOut");
+
+    el.classList.add("word-fadeOut");
+      setTimeout(function(){
+     
+        if(el.innerHTML == text[0]){
+          el.innerHTML = text[1];
+        }
+        else {
+          el.innerHTML = text[0];
+        }
+
+          
+          el.classList.add("word-fadeIn");
+      }, 2000);
+
+ }
