@@ -1,5 +1,5 @@
 /* Valentin Magry - MMI Bordeaux Montaigne Student - 2019 */
-/* Using Barba.js http://barbajs.org/ */
+/* Using Barba.js v1 http://barbajs.org/ */
 
 Barba.Pjax.start();
 
@@ -132,15 +132,17 @@ var FromItoA = Barba.BaseTransition.extend({
 
   fadeIn: function() {
     this.newContainer.classList.add("slide-FromLeft");
-
+    startWordSwitch();
     var that = this;
 
     this.newContainer.addEventListener('animationend', function(){
       that.newContainer.classList.remove("slide-FromLeft");
       that.done();
+
     });
   }
 
+  
 
 });
 
@@ -217,7 +219,7 @@ fadeIn: function() {
 var FromWtoI = Barba.BaseTransition.extend({
 
 start: function() {
-Promise.all([this.newContainerLoading, this.fadeOut()]).then(this.fadeIn.bind(this));
+  Promise.all([this.newContainerLoading, this.fadeOut()]).then(this.fadeIn.bind(this));
 },
 
 fadeOut: function() {
@@ -246,39 +248,110 @@ fadeIn: function() {
 
 /* Transition Fade for everything else
                                      ----------------------------------------------------------------------------------------------------------------------*/
-var fade = Barba.BaseTransition.extend({
-
-start: function() {
-Promise.all([this.newContainerLoading, this.fadeOut()]).then(this.fadeIn.bind(this));
-},
-
-fadeOut: function() {
-  this.oldContainer.classList.add("fade-out");
-
-  this.oldContainer.addEventListener('animationstart', function(){
-    this.oldContainer.classList.remove("fade-out");
-    this.done();
+    var fade = Barba.BaseTransition.extend({
+    start: function () {
+      Promise.all([this.newContainerLoading, this.fadeOut()]).then(this.fadeIn.bind(this));
+    },
+  
+    fadeOut: function () {
+      var oldWrap = this.oldContainer;
+      oldWrap.classList.remove('fade-in');
+      oldWrap.classList.add('fade-out');
+      
+      return new Promise(function (resolve, reject) {
+        window.setTimeout(function () {
+            resolve();
+        }, 1500);
+      });
+  
+    },
+    fadeIn: function () {
+      document.body.scrollTop = -2;//scroll to top
+      document.documentElement.scrollTop = 0;
+        
+      var newWrap = this.newContainer;
+      newWrap.classList.add('fade-in');
+      this.done();
+    }
   });
 
-  return new Promise(function (resolve, reject) {
-    window.setTimeout(function () {
-        resolve();
-    }, 1000);
-  });
-
-},
-
-fadeIn: function() {
-  this.newContainer.classList.add("fade-in");
-
-  var that = this;
-
-  this.newContainer.addEventListener('animationend', function(){
-    that.newContainer.classList.remove("fade-in");
-    that.done();
-  });
-}
 
 
-});
 
+
+  var startText = [];
+  var el;
+
+  function startWordSwitch(i, delay){
+
+    el = document.getElementsByClassName('word-switch');
+  
+    for (let i = 0; i < el.length; i++) {
+      var delay = i * 2000 + (Math.random() * 1000);
+  
+      startText[i] = el[i].innerHTML;
+      text = startText[i];
+      var newtext = text.split(",");
+      el[i].innerHTML = newtext[0];
+
+      setTimeout(function(){
+        WordSwitch(el[i], i);
+      }, delay);
+    }
+  
+  }
+
+
+ function WordSwitch(el, index){
+
+    
+
+    var text = startText[index];
+    var Newtext = text.split(",");
+    el.innerHTML = Newtext[0];
+
+    Switch(el, Newtext);
+
+    setInterval(function(){
+      Switch(el, Newtext);
+    }, 6000);
+      
+ }
+
+ function Switch(el, text){
+
+  el.classList.remove("word-fadeIn");
+  el.classList.remove("word-fadeOut");
+
+    el.classList.add("word-fadeOut");
+      setTimeout(function(){
+     
+        if(el.innerHTML == text[0]){
+          el.innerHTML = text[1];
+        }
+        else {
+          el.innerHTML = text[0];
+        }
+
+          
+          el.classList.add("word-fadeIn");
+      }, 2000);
+
+ }
+
+
+
+            
+
+          //   setTimeout(function(){
+          //     el.classList.remove("word-fadeIn");
+          //     el.classList.add("word-fadeOut");
+
+          //       setTimeout(function(){
+          //         el.innerHTML = Newtext[0];
+          //         el.classList.add("word-fadeIn");
+          //       }, 2000)
+                
+          //   }, 4000)
+              
+          // }, 1500)
