@@ -285,7 +285,6 @@ a{
     99.99% {margin-left:-100%;}
    }
 
-
   .word-fadeOut{
     animation: word-fadeOut 1.5s ease;
     opacity: 0;
@@ -606,6 +605,7 @@ a{
       position: relative;
       top: 10%;
       display: block;
+
     }
 
     .project-title{
@@ -615,7 +615,6 @@ a{
       text-transform: uppercase;
       text-align: center;
       margin: 25px;
-      
    }
 
     .project-subtitle{
@@ -623,7 +622,6 @@ a{
       color: white;
       text-align: center;
       margin: 50px;
-
     }
 
     #Project-GoBack {
@@ -658,7 +656,6 @@ a{
       text-align: center;
       margin: 50px;
     }
-   
 
 
 /*    Page Transition
@@ -981,6 +978,20 @@ a{
 
 
   
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
 
 
 

@@ -338,20 +338,3 @@ fadeIn: function() {
       }, 2000);
 
  }
-
-
-
-            
-
-          //   setTimeout(function(){
-          //     el.classList.remove("word-fadeIn");
-          //     el.classList.add("word-fadeOut");
-
-          //       setTimeout(function(){
-          //         el.innerHTML = Newtext[0];
-          //         el.classList.add("word-fadeIn");
-          //       }, 2000)
-                
-          //   }, 4000)
-              
-          // }, 1500)
