@@ -34,10 +34,6 @@ Barba.Pjax.getTransition = function () {
     return FromCtoI
   }
 
-  // if ( (prevPage === 'home.html' || prevPage === '' ) && newPage === 'index.html') {
-  //   return null;
-  // }
-
 
   else {
     return fade;
@@ -248,6 +244,36 @@ fadeIn: function() {
 
 
 });
+
+var NONE = Barba.BaseTransition.extend({
+
+  start: function() {
+    Promise.all([this.newContainerLoading, this.fadeOut()]).then(this.fadeIn.bind(this));
+  },
+  
+  fadeOut: function () {
+    var oldWrap = this.oldContainer;
+    oldWrap.classList.remove('fade-in');
+    oldWrap.classList.add('fade-out');
+    
+    return new Promise(function (resolve, reject) {
+      window.setTimeout(function () {
+          resolve();
+      }, 1500);
+    });
+
+  },
+  fadeIn: function () {
+    document.body.scrollTop = -2;//scroll to top
+    document.documentElement.scrollTop = 0;
+      
+    var newWrap = this.newContainer;
+    newWrap.classList.add('fade-in');
+    this.done();
+  }
+  
+  
+  });
 
 
 /* Transition Fade for everything else

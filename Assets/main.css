@@ -88,9 +88,9 @@ a{
   background-color: rgb(251, 5, 5);
   width: 10em;
   position: relative;
-  left: calc(50% - 160px);
+  left: calc(50% - 5em);
   padding: 5px;
-
+  margin-bottom: 10px;
 }
 
 .title a{
@@ -150,6 +150,18 @@ a{
 }
 
 
+
+#GameLink{
+  font: 400 1.2em/1 "Oswald", sans-serif;
+  text-decoration: underline;
+  animation: blink 2s ease infinite;
+  color: white;
+}
+
+@keyframes blink{
+  0% {color: white;}
+  50% {color: red;}
+}
 
 @keyframes LinkUnderline {
   from {
