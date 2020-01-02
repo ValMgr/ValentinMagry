@@ -10,29 +10,33 @@ Barba.Pjax.getTransition = function () {
   var prevPage = Barba.HistoryManager.prevStatus().url.split('/').pop()
   console.log("From " + prevPage + " to " + newPage)
 
-  if ( (prevPage === 'index.html' || prevPage === '' ) && newPage === 'about.html') {
+  if ( (prevPage === 'home.html' || prevPage === '' ) && newPage === 'about.html') {
     return FromItoA;
   }
 
-  if ( (prevPage === 'about.html' || prevPage === '' ) && newPage === 'index.html') {
+  if ( (prevPage === 'about.html' || prevPage === '' ) && newPage === 'home.html') {
     return FromAtoI
   }
 
-  if ( (prevPage === 'index.html' || prevPage === '' ) && newPage === 'works.html') {
+  if ( (prevPage === 'home.html' || prevPage === '' ) && newPage === 'works.html') {
     return FromItoW
   }
 
-  if ( (prevPage === 'works.html' || prevPage === '' ) && newPage === 'index.html') {
+  if ( (prevPage === 'works.html' || prevPage === '' ) && newPage === 'home.html') {
     return FromWtoI
   }
 
-  if ( (prevPage === 'index.html' || prevPage === '' ) && newPage === 'contact.html') {
+  if ( (prevPage === 'home.html' || prevPage === '' ) && newPage === 'contact.html') {
     return FromItoC
   }
 
-  if ( (prevPage === 'contact.html' || prevPage === '' ) && newPage === 'index.html') {
+  if ( (prevPage === 'contact.html' || prevPage === '' ) && newPage === 'home.html') {
     return FromCtoI
   }
+
+  // if ( (prevPage === 'home.html' || prevPage === '' ) && newPage === 'index.html') {
+  //   return null;
+  // }
 
 
   else {

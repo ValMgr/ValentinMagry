@@ -93,6 +93,18 @@ a{
 
 }
 
+.title a{
+  color: white;
+  font: 400 1.5em "Oswald", sans-serif;
+  text-decoration: underline;
+  transition: 0.25s;
+}
+
+.title a:hover{
+  color: rgb(251, 5, 5);
+  transition: 0.25s;
+}
+
 
   /* Links */
 
@@ -596,6 +608,11 @@ a{
       transform: translateX(450px);
     }
 
+    .works-categorie{
+      font-size: 0.4em;
+      text-align: center;
+      text-decoration: underline;
+    }
 
 
     /* Project Page Presentation */
@@ -655,6 +672,11 @@ a{
     .videoWrapper{
       text-align: center;
       margin: 50px;
+    }
+
+    .git{
+      color: white;
+      font-size: 1em;
     }
 
 

@@ -1,0 +1,15 @@
+{
+"companyName": "Valentin Magry",
+"productName": "Portfolio Platformer",
+"productVersion": "Alpha 0.1",
+"dataUrl": "Portfolio Export LAST.data.unityweb",
+"wasmCodeUrl": "Portfolio Export LAST.wasm.code.unityweb",
+"wasmFrameworkUrl": "Portfolio Export LAST.wasm.framework.unityweb",
+"graphicsAPI": ["WebGL 2.0","WebGL 1.0"],
+"webglContextAttributes": {"preserveDrawingBuffer": false},
+"splashScreenStyle": "Dark",
+"backgroundColor": "#231F20",
+"developmentBuild": false,
+"multithreading": false,
+"unityVersion": "2019.3.0b7"
+}
