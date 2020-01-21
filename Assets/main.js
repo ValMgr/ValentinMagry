@@ -1,4 +1,6 @@
-/* Valentin Magry - MMI Bordeaux Montaigne Student - 2019 */
+/* ====================================================== */
+/* Valentin Magry - MMI Bordeaux Montaigne Student - 2020 */
+/* ====================================================== */
 /* Using Barba.js v1 http://barbajs.org/ */
 
 Barba.Pjax.start();
